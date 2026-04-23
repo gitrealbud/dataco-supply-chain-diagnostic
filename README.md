@@ -5,7 +5,7 @@
 - **Full Notion Report** → [View Detailed Analysis on Notion](https://earthy-dietician-2c2.notion.site/DataCo-Supply-Chain-Optimization-Diagnostic-Late-Deliveries-Status-Chaos-Profit-Signal-Contamina-342764adaf6c80c7801ec125480528e1?pvs=143)
 - **Kaggle Dataset** → [DataCo Smart Supply Chain for Big Data Analysis](https://www.kaggle.com/datasets/shashwatwork/dataco-smart-supply-chain-for-big-data-analysis)
 
-**Exposing $2.05M in hidden leakage — Late Deliveries, Status Chaos & Profit Signal Contamination**
+**Exposing $2.05M in hidden leakage - Late Deliveries, Status Chaos & Profit Signal Contamination**
 
 Deep diagnostic analysis of 180,519 orders from DataCo Global's logistics operation. Identified systemic failures in order status management, delivery execution, and contaminated profit signals.
 
