@@ -63,4 +63,4 @@ See [LICENSE](LICENSE) for full details.
 ---
 
 **Built with density.**  
-Questions or collaboration? Reach out on X: [@FolkForgeHQ](https://x.com/FolkForgeHQ)
+Questions or collaboration? Reach out via email: [jwasiatycz@protonmail.com](mailto:jwasiatycz@protonmail.com)
