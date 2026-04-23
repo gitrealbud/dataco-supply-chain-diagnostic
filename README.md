@@ -1,62 +1,40 @@
-# DataCo Supply Chain Optimization Diagnostic
+# dataco-supply-chain-diagnostic
 
-### Links
-- **Presentation Video** → [Watch on YouTube](https://youtu.be/J5D5v1P1_3s)
-- **Full Notion Report** → [View Detailed Analysis on Notion](https://earthy-dietician-2c2.notion.site/DataCo-Supply-Chain-Optimization-Diagnostic-Late-Deliveries-Status-Chaos-Profit-Signal-Contamina-342764adaf6c80c7801ec125480528e1?pvs=143)
-- **Kaggle Dataset** → [DataCo Smart Supply Chain for Big Data Analysis](https://www.kaggle.com/datasets/shashwatwork/dataco-smart-supply-chain-for-big-data-analysis)
+**Exposing $2.05M in hidden leakage — Late Deliveries, Status Chaos & Profit Signal Contamination**
 
-**Exposing $2.05M in hidden leakage - Late Deliveries, Status Chaos & Profit Signal Contamination**
-
-Deep diagnostic analysis of 180,519 orders from DataCo Global's logistics operation. Identified systemic failures in order status management, delivery execution, and contaminated profit signals.
+Deep diagnostic on **180,519 orders** from DataCo Global’s supply chain operation.  
+I rebuilt a contaminated profit signal, exposed catastrophic status chaos locking up real money, and surfaced fixable delivery failures that were destroying trust and burning cost.
 
 ### Key Findings
-- Reconstructed true profit signal: **$3.88M phantom loss → $905 real loss**
+- Reconstructed profit signal: **$3.88M phantom loss → $905 real loss**
 - **95,000 orders** (52.41%) stuck >90 days → **$2.05M** locked in blind capital
 - Late delivery rate: **54.83%** overall | **95%+** on First Class
 - 23.68% of orders require 2–4 day escalation
 
-The system was blind. We made it see.
+The system wasn’t just inefficient. **It was blind.**
 
----
+### Watch the Presentation
+[![Watch the video](https://img.shields.io/badge/Watch_Presentation-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://youtu.be/J5D5v1P1_3s)
+
+### Full Resources
+- **Detailed Notion Report** → [View full analysis & methodology](https://earthy-dietician-2c2.notion.site/DataCo-Supply-Chain-Optimization-Diagnostic-Late-Deliveries-Status-Chaos-Profit-Signal-Contamina-342764adaf6c80c7801ec125480528e1?pvs=143)
+- **Kaggle Dataset** → [DataCo Smart Supply Chain for Big Data Analysis](https://www.kaggle.com/datasets/shashwatwork/dataco-smart-supply-chain-for-big-data-analysis)
 
 ### Repository Contents
 
 | File / Folder                          | Description |
 |----------------------------------------|-----------|
-| `DataCo_Global_Supply_Chain_Diagnostic.pptx` | Final stakeholder presentation deck (12 slides) with speaker notes |
-| `LICENSE`                              | Free use with explicit permission for commercial/public use |
-| `README.md`                            | This file |
-| `/powerbi/`                            | Power BI dashboard file + DAX measures |
-| `/scripts/`                            | Python/Pandas cleaning scripts used in initial analysis |
-| `/images/`                             | Original dashboard screenshots and chart exports |
+| `DataCo_Global_Supply_Chain_Diagnostic.pptx` | Final 12-slide stakeholder deck (with speaker notes) |
+| `dax/DataCo_DAX_Measures.dax`          | All DAX measures powering the Power BI model |
 | `Full Report.txt`                      | Detailed written stakeholder report |
-| `DataCo Video Presentation.docx`       | Full video script used for narration |
-
-### Project Overview
-
-This diagnostic was performed to surface immediately actionable control gaps for the Head of Site Operations at DataCo Global.
-
-**Core Issues Exposed:**
-- **Status Chaos**: 95K shipped orders stuck in non-final statuses for years
-- **Delivery Failure**: Systemic late shipments, especially catastrophic First Class performance
-- **Profit Signal Contamination**: Extreme discount-driven volatility made the original "Benefit per order" field unreliable
-
-**Recommendations Implemented in Deck:**
-- Mandatory real-time status updates (Priority 1)
-- Tiered escalation framework (Glentel model)
-- Auto-cancellation triggers for aged orders
-- Minimum margin guardrails on discounts
-
-### How to Use
-
-1. Open `DataCo_Global_Supply_Chain_Diagnostic.pptx` for the stakeholder-ready deck
-2. Review `Full Report.txt` for deeper methodology and numbers
-3. Use the presentation + speaker notes when presenting to leadership
+| `images/`                              | Dashboard screenshots and key charts |
+| `scripts/`                             | Python/Pandas cleaning scripts |
+| `powerbi/`                             | Power BI dashboard files |
+| `LICENSE`                              | Free use with explicit permission for commercial/public use |
 
 ### License
-
 Free for personal and educational use.  
-**Commercial use, public presentations, or derivative works require explicit written permission** from Jonathan Wasiatycz.
+**Any commercial use, public presentation, or derivative work requires explicit written permission** from [gitrealbud](https://github.com/gitrealbud/).
 
 See [LICENSE](LICENSE) for full details.
 
