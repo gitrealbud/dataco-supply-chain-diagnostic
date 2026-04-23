@@ -1,5 +1,10 @@
 # DataCo Supply Chain Optimization Diagnostic
 
+### Data Source
+This analysis was performed on the **DataCo Smart Supply Chain** dataset:
+
+→ [Kaggle: DataCo Smart Supply Chain for Big Data Analysis](https://www.kaggle.com/datasets/shashwatwork/dataco-smart-supply-chain-for-big-data-analysis)
+
 **Exposing $2.05M in hidden leakage — Late Deliveries, Status Chaos & Profit Signal Contamination**
 
 Deep diagnostic analysis of 180,519 orders from DataCo Global's logistics operation. Identified systemic failures in order status management, delivery execution, and contaminated profit signals.
@@ -21,8 +26,7 @@ The system was blind. We made it see.
 | `DataCo_Global_Supply_Chain_Diagnostic.pptx` | Final stakeholder presentation deck (12 slides) with speaker notes |
 | `LICENSE`                              | Free use with explicit permission for commercial/public use |
 | `README.md`                            | This file |
-| `/data/` (if present)                  | Raw + cleaned datasets (not included in public repo for sensitivity) |
-| `/powerbi/`                            | Power BI dashboard file + DAX measures (if shared) |
+| `/powerbi/`                            | Power BI dashboard file + DAX measures |
 | `/scripts/`                            | Python/Pandas cleaning scripts used in initial analysis |
 | `/images/`                             | Original dashboard screenshots and chart exports |
 | `Full Report.txt`                      | Detailed written stakeholder report |
