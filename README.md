@@ -17,7 +17,7 @@ The system wasn’t just inefficient. **It was blind.**
 [![Watch the video](https://img.shields.io/badge/Watch_Presentation-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://youtu.be/J5D5v1P1_3s)
 
 ### Full Resources
-- **Detailed Notion Report** → [View stakeholder report](https://earthy-dietician-2c2.notion.site/DataCo-Supply-Chain-Optimization-Diagnostic-Late-Deliveries-Status-Chaos-Profit-Signal-Contamina-342764adaf6c80c7801ec125480528e1?pvs=143)
+- **Detailed Notion Report** → [View stakeholder report](https://opsforge.notion.site/DataCo-Supply-Chain-Optimization-Diagnostic-Late-Deliveries-Status-Chaos-Profit-Signal-Contamina-342764adaf6c80c7801ec125480528e1?source=copy_link)
 - **Kaggle Dataset** → [DataCo Smart Supply Chain for Big Data Analysis](https://www.kaggle.com/datasets/shashwatwork/dataco-smart-supply-chain-for-big-data-analysis)
 
 ### Repository Contents
