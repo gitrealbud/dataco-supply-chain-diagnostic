@@ -1,9 +1,9 @@
 # DataCo Supply Chain Optimization Diagnostic
 
-### Data Source
-This analysis was performed on the **DataCo Smart Supply Chain** dataset:
-
-→ [Kaggle: DataCo Smart Supply Chain for Big Data Analysis](https://www.kaggle.com/datasets/shashwatwork/dataco-smart-supply-chain-for-big-data-analysis)
+### Links
+- **Presentation Video** → [Watch on YouTube](https://youtu.be/J5D5v1P1_3s)
+- **Full Notion Report** → [View Detailed Analysis on Notion](https://earthy-dietician-2c2.notion.site/DataCo-Supply-Chain-Optimization-Diagnostic-Late-Deliveries-Status-Chaos-Profit-Signal-Contamina-342764adaf6c80c7801ec125480528e1?pvs=143)
+- **Kaggle Dataset** → [DataCo Smart Supply Chain for Big Data Analysis](https://www.kaggle.com/datasets/shashwatwork/dataco-smart-supply-chain-for-big-data-analysis)
 
 **Exposing $2.05M in hidden leakage — Late Deliveries, Status Chaos & Profit Signal Contamination**
 
