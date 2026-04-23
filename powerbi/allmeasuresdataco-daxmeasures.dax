@@ -1,0 +1,129 @@
+<Subscribe xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+          <Object>
+            <TraceID>DaxStudio_Session_93FBD29E-36F1-4D0D-9C3B-ED52E618039D_all</TraceID>
+          </Object>
+          <SubscriptionId xmlns="http://schemas.microsoft.com/analysisservices/2018/engine/800">TRACE_SUBSCRIPTION_3f21d400-c786-4aee-85fb-86065b22de47</SubscriptionId>
+        </Subscribe>
+DEFINE 
+---- MODEL MEASURES BEGIN ----
+MEASURE DataCoSupplyChainDataset[% of Orders That Are Aged Stuck by Status] = 
+DIVIDE(
+    CALCULATE(
+        COUNTROWS('DataCoSupplyChainDataset'),
+        'DataCoSupplyChainDataset'[Aged Stuck Order] = "CRITICAL - Aged Stuck (>90 days)"
+    ),
+    COUNTROWS('DataCoSupplyChainDataset'),
+    0
+)
+MEASURE DataCoSupplyChainDataset[% Orders Losing Money] = 
+DIVIDE([Loss Order Count], COUNTROWS('DataCoSupplyChainDataset'))
+MEASURE DataCoSupplyChainDataset[% Orders Needing 2-4D Escalation] = 
+DIVIDE([Late 2-4 Day Orders], COUNTROWS('DataCoSupplyChainDataset'))
+MEASURE DataCoSupplyChainDataset[Aged Stuck but Shipped Loss $] = 
+CALCULATE(
+    [Unknown or Invalid Order Type],
+    'DataCoSupplyChainDataset'[Aged Stuck Order] = "CRITICAL - Aged Stuck (>90 days)",
+    'DataCoSupplyChainDataset'[Actually Shipped] = "Yes - Shipped"
+)
+MEASURE DataCoSupplyChainDataset[Aged Stuck Loss Value] = 
+- CALCULATE(
+    SUM('DataCoSupplyChainDataset'[Order Profit Per Order]),
+    'DataCoSupplyChainDataset'[Aged Stuck Order] = "CRITICAL - Aged Stuck (>90 days)"
+)
+MEASURE DataCoSupplyChainDataset[Aged Stuck Order Count] = 
+CALCULATE(
+    COUNTROWS('DataCoSupplyChainDataset'),
+    'DataCoSupplyChainDataset'[Aged Stuck Order] = "CRITICAL - Aged Stuck (>90 days)"
+)
+MEASURE DataCoSupplyChainDataset[Avg Days Late (Completed)] = 
+CALCULATE(
+    AVERAGE('DataCoSupplyChainDataset'[Days Late]),
+    'DataCoSupplyChainDataset'[Order Status] = "COMPLETE",
+    'DataCoSupplyChainDataset'[Days Late] > 0
+)
+MEASURE DataCoSupplyChainDataset[Completed Order Revenue] = 
+CALCULATE(
+    SUM('DataCoSupplyChainDataset'[Order Item Total]),
+    'DataCoSupplyChainDataset'[Order Status] = "COMPLETE"
+)
+MEASURE DataCoSupplyChainDataset[Discount-Induced Loss $] = 
+CALCULATE(
+    SUM('DataCoSupplyChainDataset'[Benefit per order]),
+    'DataCoSupplyChainDataset'[Benefit per order] < 0,
+    'DataCoSupplyChainDataset'[Pre-Discount Implied Profit] >= 0
+)
+MEASURE DataCoSupplyChainDataset[Discount-Induced Loss Orders] = 
+CALCULATE(
+    COUNTROWS('DataCoSupplyChainDataset'),
+    'DataCoSupplyChainDataset'[Benefit per order] < 0,
+    'DataCoSupplyChainDataset'[Pre-Discount Implied Profit] >= 0
+)
+MEASURE DataCoSupplyChainDataset[Estimated Loss Order Count] = 
+COUNTROWS(
+    FILTER(
+        'DataCoSupplyChainDataset',
+        'DataCoSupplyChainDataset'[Estimated Profit per Order] < 0
+    )
+)
+MEASURE DataCoSupplyChainDataset[Estimated Total Loss Amount] = 
+SUMX(
+    FILTER(
+        'DataCoSupplyChainDataset',
+        'DataCoSupplyChainDataset'[Estimated Profit per Order] < 0
+    ),
+    'DataCoSupplyChainDataset'[Estimated Profit per Order]
+)
+MEASURE DataCoSupplyChainDataset[Implied Loss Order Count] = 
+COUNTROWS(
+    FILTER(
+        'DataCoSupplyChainDataset',
+        'DataCoSupplyChainDataset'[Order Profit per Order] < 0
+    )
+)
+MEASURE DataCoSupplyChainDataset[Implied Total Loss Amount] = 
+SUMX(
+    FILTER(
+        'DataCoSupplyChainDataset',
+        'DataCoSupplyChainDataset'[Order Profit per Order] < 0
+    ),
+    'DataCoSupplyChainDataset'[Order Profit per Order]
+)
+MEASURE DataCoSupplyChainDataset[Late 2-4 Day Orders] = 
+CALCULATE(
+    COUNTROWS('DataCoSupplyChainDataset'),
+    'DataCoSupplyChainDataset'[Escalation Trigger] IN {"Late 2D - Remind Warehouse", "Late 3D - Notify Manager", "Late 4D - Notify District Manager"}
+)
+MEASURE DataCoSupplyChainDataset[Late Order Count] = 
+CALCULATE(
+    COUNTROWS('DataCoSupplyChainDataset'),
+    'DataCoSupplyChainDataset'[Late Flag] = "Late"
+)
+MEASURE DataCoSupplyChainDataset[Loss Order Count] = 
+CALCULATE(
+    COUNTROWS('DataCoSupplyChainDataset'), 
+    'DataCoSupplyChainDataset'[Order Profit Per Order] < 0
+)
+MEASURE DataCoSupplyChainDataset[Orders Fallen Below Profit After Discount] = 
+CALCULATE(
+    COUNTROWS('DataCoSupplyChainDataset'),
+    'DataCoSupplyChainDataset'[Benefit per order] < 0,
+    'DataCoSupplyChainDataset'[Pre-Discount Profit per Order] >= 0
+)
+MEASURE DataCoSupplyChainDataset[Total $ Fallen Below Profit After Discount] = 
+CALCULATE(
+    SUM('DataCoSupplyChainDataset'[Benefit per order]),
+    'DataCoSupplyChainDataset'[Benefit per order] < 0,
+    'DataCoSupplyChainDataset'[Pre-Discount Profit per Order] >= 0
+)
+MEASURE DataCoSupplyChainDataset[Total Loss Value] = 
+CALCULATE(
+    SUM('DataCoSupplyChainDataset'[Order Profit Per Order]),
+    'DataCoSupplyChainDataset'[Order Profit Per Order] < 0
+)
+MEASURE DataCoSupplyChainDataset[Unknown or Invalid Order Type] = 
+CALCULATE(
+    SUM('DataCoSupplyChainDataset'[Order Profit Per Order]), 
+    'DataCoSupplyChainDataset'[Order Profit Per Order] < 0
+)
+---- MODEL MEASURES END ----
+
