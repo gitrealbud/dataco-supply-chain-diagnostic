@@ -56,7 +56,7 @@ This diagnostic was performed to surface immediately actionable control gaps for
 ### License
 
 Free for personal and educational use.  
-**Commercial use, public presentations, or derivative works require explicit written permission** from FolkForgeHQ.
+**Commercial use, public presentations, or derivative works require explicit written permission** from Jonathan Wasiatycz.
 
 See [LICENSE](LICENSE) for full details.
 
